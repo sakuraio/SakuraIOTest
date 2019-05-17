@@ -91,9 +91,9 @@
             this.setTargetModuleButton = new System.Windows.Forms.Button();
             this.apiAuthButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.jsonMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.channelNumBox)).BeginInit();
@@ -203,7 +203,7 @@
             "byte[8]"});
             this.typeBox.Location = new System.Drawing.Point(118, 216);
             this.typeBox.Name = "typeBox";
-            this.typeBox.Size = new System.Drawing.Size(308, 20);
+            this.typeBox.Size = new System.Drawing.Size(307, 20);
             this.typeBox.TabIndex = 6;
             // 
             // channelNumBox
@@ -217,7 +217,7 @@
             0,
             0});
             this.channelNumBox.Name = "channelNumBox";
-            this.channelNumBox.Size = new System.Drawing.Size(308, 19);
+            this.channelNumBox.Size = new System.Drawing.Size(307, 19);
             this.channelNumBox.TabIndex = 7;
             // 
             // label2
@@ -248,7 +248,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.valueBox.Location = new System.Drawing.Point(118, 243);
             this.valueBox.Name = "valueBox";
-            this.valueBox.Size = new System.Drawing.Size(308, 19);
+            this.valueBox.Size = new System.Drawing.Size(307, 19);
             this.valueBox.TabIndex = 10;
             // 
             // label4
@@ -265,7 +265,7 @@
             // sendButton
             // 
             this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendButton.Location = new System.Drawing.Point(433, 214);
+            this.sendButton.Location = new System.Drawing.Point(432, 214);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(182, 23);
             this.sendButton.TabIndex = 12;
@@ -379,7 +379,7 @@
             this.tabControl1.Location = new System.Drawing.Point(7, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(612, 172);
+            this.tabControl1.Size = new System.Drawing.Size(611, 172);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage2
@@ -388,7 +388,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(604, 146);
+            this.tabPage2.Size = new System.Drawing.Size(603, 146);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CSV";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -450,7 +450,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(604, 146);
+            this.tabPage1.Size = new System.Drawing.Size(603, 146);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "JSON";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -459,7 +459,7 @@
             // 
             this.exportRxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exportRxButton.Enabled = false;
-            this.exportRxButton.Location = new System.Drawing.Point(297, 189);
+            this.exportRxButton.Location = new System.Drawing.Point(296, 189);
             this.exportRxButton.Name = "exportRxButton";
             this.exportRxButton.Size = new System.Drawing.Size(227, 23);
             this.exportRxButton.TabIndex = 25;
@@ -490,7 +490,7 @@
             this.txQueueListView.FullRowSelect = true;
             this.txQueueListView.Location = new System.Drawing.Point(7, 43);
             this.txQueueListView.Name = "txQueueListView";
-            this.txQueueListView.Size = new System.Drawing.Size(607, 139);
+            this.txQueueListView.Size = new System.Drawing.Size(606, 139);
             this.txQueueListView.TabIndex = 28;
             this.txQueueListView.UseCompatibleStateImageBehavior = false;
             this.txQueueListView.View = System.Windows.Forms.View.Details;
@@ -534,7 +534,7 @@
             this.groupBox2.Controls.Add(this.valueBox);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(629, 294);
+            this.groupBox2.Size = new System.Drawing.Size(628, 294);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "送信メッセージキュー";
@@ -543,7 +543,7 @@
             // 
             this.exportTxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exportTxButton.Enabled = false;
-            this.exportTxButton.Location = new System.Drawing.Point(528, 240);
+            this.exportTxButton.Location = new System.Drawing.Point(527, 240);
             this.exportTxButton.Name = "exportTxButton";
             this.exportTxButton.Size = new System.Drawing.Size(87, 23);
             this.exportTxButton.TabIndex = 33;
@@ -554,7 +554,7 @@
             // 
             this.importTxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.importTxButton.Enabled = false;
-            this.importTxButton.Location = new System.Drawing.Point(433, 240);
+            this.importTxButton.Location = new System.Drawing.Point(432, 240);
             this.importTxButton.Name = "importTxButton";
             this.importTxButton.Size = new System.Drawing.Size(87, 23);
             this.importTxButton.TabIndex = 32;
@@ -564,7 +564,7 @@
             // clearTxQueueButton
             // 
             this.clearTxQueueButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearTxQueueButton.Location = new System.Drawing.Point(433, 265);
+            this.clearTxQueueButton.Location = new System.Drawing.Point(432, 265);
             this.clearTxQueueButton.Name = "clearTxQueueButton";
             this.clearTxQueueButton.Size = new System.Drawing.Size(182, 23);
             this.clearTxQueueButton.TabIndex = 31;
@@ -583,13 +583,13 @@
             0,
             0});
             this.timeOffsetNumBox.Name = "timeOffsetNumBox";
-            this.timeOffsetNumBox.Size = new System.Drawing.Size(308, 19);
+            this.timeOffsetNumBox.Size = new System.Drawing.Size(307, 19);
             this.timeOffsetNumBox.TabIndex = 30;
             // 
             // addTxDataButton
             // 
             this.addTxDataButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addTxDataButton.Location = new System.Drawing.Point(433, 188);
+            this.addTxDataButton.Location = new System.Drawing.Point(432, 188);
             this.addTxDataButton.Name = "addTxDataButton";
             this.addTxDataButton.Size = new System.Drawing.Size(182, 23);
             this.addTxDataButton.TabIndex = 29;
@@ -607,7 +607,7 @@
             this.groupBox3.Controls.Add(this.clearRxButton);
             this.groupBox3.Location = new System.Drawing.Point(3, 303);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(629, 218);
+            this.groupBox3.Size = new System.Drawing.Size(628, 218);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "受信したメッセージ";
@@ -618,7 +618,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clearRxButton.Location = new System.Drawing.Point(7, 189);
             this.clearRxButton.Name = "clearRxButton";
-            this.clearRxButton.Size = new System.Drawing.Size(284, 23);
+            this.clearRxButton.Size = new System.Drawing.Size(283, 23);
             this.clearRxButton.TabIndex = 26;
             this.clearRxButton.Text = "受信データクリア";
             this.clearRxButton.UseVisualStyleBackColor = true;
@@ -783,6 +783,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "API関連設定";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(273, 71);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(111, 12);
+            this.linkLabel1.TabIndex = 43;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "API Token取得ページ";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // button1
             // 
             this.button1.Enabled = false;
@@ -817,22 +829,10 @@
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 42;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(273, 71);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(111, 12);
-            this.linkLabel1.TabIndex = 43;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "API Token取得ページ";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1176, 561);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.statusStrip1);

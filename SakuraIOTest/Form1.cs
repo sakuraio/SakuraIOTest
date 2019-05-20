@@ -199,7 +199,7 @@ namespace SakuraIOTest
                     {
                         ChannelID = int.Parse(x.SubItems[0].Text),
                         Type = typeNameToIndicator(x.SubItems[1].Text),
-                        Value = x.SubItems[2].Text,
+                        Value = convertValueType(x.SubItems[1].Text, x.SubItems[2].Text),
                         Datetime = x.SubItems[3].Text
                     };
                 })
@@ -483,6 +483,26 @@ namespace SakuraIOTest
                     return "d";
             }
             return "";
+        }
+
+        private object convertValueType(string typename, object value)
+        {
+            switch (typename)
+            {
+                case "int32":
+                    return Convert.ToInt32(value);
+                case "uint32":
+                    return Convert.ToUInt32(value);
+                case "int64":
+                    return Convert.ToInt64(value);
+                case "uint64":
+                    return Convert.ToUInt64(value);
+                case "float":
+                    return (float)Convert.ToDouble(value);
+                case "double":
+                    return Convert.ToDouble(value);
+            }
+            return null;
         }
         #endregion
 

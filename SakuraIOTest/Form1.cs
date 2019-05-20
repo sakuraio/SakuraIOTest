@@ -99,7 +99,7 @@ namespace SakuraIOTest
             var lv = csvPreviewListView.SelectedItems.Cast<ListViewItem>();
             try
             {
-                var items = lv.Select(x => x.SubItems.Cast<ListViewSubItem>().Select(y => y.Text).Aggregate((a, b) => string.Format("{0}, {1}", a, b)))
+                var items = lv.Select(x => x.SubItems.Cast<ListViewSubItem>().Select(y => y.Text).Aggregate((a, b) => string.Format("{0},{1}", a, b)))
                     .Aggregate((a, b) => string.Format("{0}\n{1}", a, b));
                 Clipboard.SetText(items);
             }

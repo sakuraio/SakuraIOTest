@@ -108,6 +108,31 @@ namespace SakuraIOTest
                 return;
             }
         }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            apiTokenBox.Text = Properties.Settings.Default.APIToken;
+            apiSecretBox.Text = Properties.Settings.Default.APISecret;
+            tokenBox.Text = Properties.Settings.Default.WebSocketToken;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (apiTokenBox.Text != Properties.Settings.Default.APIToken ||
+                apiSecretBox.Text != Properties.Settings.Default.APISecret ||
+                tokenBox.Text != Properties.Settings.Default.WebSocketToken)
+            {
+                if (MessageBox.Show("トークンなどの設定情報を保存しますか？", "設定情報の保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Properties.Settings.Default.APIToken = apiTokenBox.Text;
+                    Properties.Settings.Default.APISecret = apiSecretBox.Text;
+                    Properties.Settings.Default.WebSocketToken = tokenBox.Text;
+                    Properties.Settings.Default.Save();
+                }
+            }
+        }
+
         #endregion
 
         private async void websocketConnectButton_Click(object sender, EventArgs e)
@@ -278,7 +303,7 @@ namespace SakuraIOTest
             statusLabel.Text = "プロジェクト取得中";
             client.SetAPIToken(apiTokenBox.Text, apiSecretBox.Text);
 
-            ProjectList = await client.GetProjects();
+            ProjectList = (await client.GetProjects()).OrderBy((x) => x.ID).ToList();
             projectListBox.Items.Clear();
             projectListBox.Items.AddRange(ProjectList.ToArray());
             projectListBox.SelectedIndex = 0;
@@ -415,7 +440,7 @@ namespace SakuraIOTest
             statusLabel.Text = "プロジェクト取得中";
             client.SetAPIToken(apiTokenBox.Text, apiSecretBox.Text);
 
-            ProjectList = await client.GetProjects();
+            ProjectList = (await client.GetProjects()).OrderBy((x) => x.ID).ToList();
             projectListBox.Items.Clear();
             projectListBox.Items.AddRange(ProjectList.ToArray());
             projectListBox.Enabled = true;
@@ -515,28 +540,6 @@ namespace SakuraIOTest
             System.Diagnostics.Process.Start("https://secure.sakura.ad.jp/iot/console/#/apikeys");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            apiTokenBox.Text = Properties.Settings.Default.APIToken;
-            apiSecretBox.Text = Properties.Settings.Default.APISecret;
-            tokenBox.Text = Properties.Settings.Default.WebSocketToken;
-        }
-
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (apiTokenBox.Text != Properties.Settings.Default.APIToken ||
-                apiSecretBox.Text != Properties.Settings.Default.APISecret ||
-                tokenBox.Text != Properties.Settings.Default.WebSocketToken)
-            {
-                if (MessageBox.Show("トークンなどの設定情報を保存しますか？", "設定情報の保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    Properties.Settings.Default.APIToken = apiTokenBox.Text;
-                    Properties.Settings.Default.APISecret= apiSecretBox.Text;
-                    Properties.Settings.Default.WebSocketToken = tokenBox.Text;
-                    Properties.Settings.Default.Save();
-                }
-            }
-        }
     }
 
 

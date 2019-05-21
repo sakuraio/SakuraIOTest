@@ -839,6 +839,8 @@
             this.MinimumSize = new System.Drawing.Size(800, 300);
             this.Name = "Form1";
             this.Text = "sakura.io Test";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.jsonMenuStrip1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

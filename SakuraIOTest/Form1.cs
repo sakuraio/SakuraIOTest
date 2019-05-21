@@ -278,7 +278,7 @@ namespace SakuraIOTest
             statusLabel.Text = "プロジェクト取得中";
             client.SetAPIToken(apiTokenBox.Text, apiSecretBox.Text);
 
-            ProjectList = await client.GetProjects();
+            ProjectList = (await client.GetProjects()).OrderBy((x) => x.ID).ToList();
             projectListBox.Items.Clear();
             projectListBox.Items.AddRange(ProjectList.ToArray());
             projectListBox.SelectedIndex = 0;
@@ -415,7 +415,7 @@ namespace SakuraIOTest
             statusLabel.Text = "プロジェクト取得中";
             client.SetAPIToken(apiTokenBox.Text, apiSecretBox.Text);
 
-            ProjectList = await client.GetProjects();
+            ProjectList = (await client.GetProjects()).OrderBy((x) => x.ID).ToList();
             projectListBox.Items.Clear();
             projectListBox.Items.AddRange(ProjectList.ToArray());
             projectListBox.Enabled = true;

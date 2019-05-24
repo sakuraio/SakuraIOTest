@@ -18,6 +18,9 @@ sakura.ioの機能を試すためのWindows用ツールです。
 # 動作環境
 Windows 10上で動作することを確認しています。
 
+動作には.NET Framework 4.6が必要です。
+ただし、.NET Framework 4.6がインストールされていてもWindows 7以前のOSではWebSocket関連の機能が実装されていないため動作しません。
+
 また、開発にはVisual Studio 2017 Communityを使用しています。
 
 # 再頒布やサポートについて

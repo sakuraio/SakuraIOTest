@@ -94,6 +94,8 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.txQueueMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txQueueDeleteMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.jsonMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.channelNumBox)).BeginInit();
@@ -109,6 +111,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.txQueueMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tokenBox
@@ -488,6 +491,7 @@
             this.Type,
             this.Value,
             this.Datetime});
+            this.txQueueListView.ContextMenuStrip = this.txQueueMenuStrip1;
             this.txQueueListView.FullRowSelect = true;
             this.txQueueListView.Location = new System.Drawing.Point(7, 43);
             this.txQueueListView.Name = "txQueueListView";
@@ -830,6 +834,20 @@
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 42;
             // 
+            // txQueueMenuStrip1
+            // 
+            this.txQueueMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txQueueDeleteMenuItem1});
+            this.txQueueMenuStrip1.Name = "txQueueMenuStrip1";
+            this.txQueueMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // txQueueDeleteMenuItem1
+            // 
+            this.txQueueDeleteMenuItem1.Name = "txQueueDeleteMenuItem1";
+            this.txQueueDeleteMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.txQueueDeleteMenuItem1.Text = "選択したデータを削除";
+            this.txQueueDeleteMenuItem1.Click += new System.EventHandler(this.txQueueDeleteMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -860,6 +878,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.txQueueMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -932,6 +951,8 @@
         private System.Windows.Forms.Button exportTxButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ContextMenuStrip txQueueMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem txQueueDeleteMenuItem1;
     }
 }
 

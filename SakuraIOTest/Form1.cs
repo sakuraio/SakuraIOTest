@@ -634,10 +634,22 @@ namespace SakuraIOTest
                 })
             ).ToArray();
             txQueueListView.Items.AddRange(txData);
-
             
             return;
 
+        }
+
+        private void txQueueDeleteMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (txQueueListView.SelectedIndices.Count == 0)
+            {
+                return;
+            }
+
+            foreach(var item in txQueueListView.SelectedItems)
+            {
+                txQueueListView.Items.Remove((ListViewItem)item);
+            }
         }
     }
 

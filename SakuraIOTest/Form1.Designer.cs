@@ -94,6 +94,8 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.txQueueMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txQueueDeleteMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.jsonMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.channelNumBox)).BeginInit();
@@ -109,6 +111,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.txQueueMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tokenBox
@@ -203,7 +206,7 @@
             "byte[8]"});
             this.typeBox.Location = new System.Drawing.Point(118, 216);
             this.typeBox.Name = "typeBox";
-            this.typeBox.Size = new System.Drawing.Size(305, 20);
+            this.typeBox.Size = new System.Drawing.Size(303, 20);
             this.typeBox.TabIndex = 103;
             // 
             // channelNumBox
@@ -217,7 +220,7 @@
             0,
             0});
             this.channelNumBox.Name = "channelNumBox";
-            this.channelNumBox.Size = new System.Drawing.Size(305, 19);
+            this.channelNumBox.Size = new System.Drawing.Size(303, 19);
             this.channelNumBox.TabIndex = 102;
             // 
             // label2
@@ -248,7 +251,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.valueBox.Location = new System.Drawing.Point(118, 243);
             this.valueBox.Name = "valueBox";
-            this.valueBox.Size = new System.Drawing.Size(305, 19);
+            this.valueBox.Size = new System.Drawing.Size(303, 19);
             this.valueBox.TabIndex = 103;
             // 
             // label4
@@ -265,7 +268,7 @@
             // sendButton
             // 
             this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendButton.Location = new System.Drawing.Point(430, 214);
+            this.sendButton.Location = new System.Drawing.Point(428, 214);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(182, 23);
             this.sendButton.TabIndex = 106;
@@ -380,7 +383,7 @@
             this.tabControl1.Location = new System.Drawing.Point(7, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(609, 172);
+            this.tabControl1.Size = new System.Drawing.Size(607, 172);
             this.tabControl1.TabIndex = 110;
             // 
             // tabPage2
@@ -389,7 +392,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(601, 146);
+            this.tabPage2.Size = new System.Drawing.Size(599, 146);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CSV";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -451,7 +454,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(601, 146);
+            this.tabPage1.Size = new System.Drawing.Size(599, 146);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "JSON";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -460,7 +463,7 @@
             // 
             this.exportRxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exportRxButton.Enabled = false;
-            this.exportRxButton.Location = new System.Drawing.Point(294, 189);
+            this.exportRxButton.Location = new System.Drawing.Point(292, 189);
             this.exportRxButton.Name = "exportRxButton";
             this.exportRxButton.Size = new System.Drawing.Size(227, 23);
             this.exportRxButton.TabIndex = 113;
@@ -488,10 +491,11 @@
             this.Type,
             this.Value,
             this.Datetime});
+            this.txQueueListView.ContextMenuStrip = this.txQueueMenuStrip1;
             this.txQueueListView.FullRowSelect = true;
             this.txQueueListView.Location = new System.Drawing.Point(7, 43);
             this.txQueueListView.Name = "txQueueListView";
-            this.txQueueListView.Size = new System.Drawing.Size(604, 139);
+            this.txQueueListView.Size = new System.Drawing.Size(602, 139);
             this.txQueueListView.TabIndex = 101;
             this.txQueueListView.UseCompatibleStateImageBehavior = false;
             this.txQueueListView.View = System.Windows.Forms.View.Details;
@@ -535,7 +539,7 @@
             this.groupBox2.Controls.Add(this.valueBox);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(626, 294);
+            this.groupBox2.Size = new System.Drawing.Size(624, 294);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "送信メッセージキュー";
@@ -543,29 +547,29 @@
             // exportTxButton
             // 
             this.exportTxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportTxButton.Enabled = false;
-            this.exportTxButton.Location = new System.Drawing.Point(525, 240);
+            this.exportTxButton.Location = new System.Drawing.Point(523, 240);
             this.exportTxButton.Name = "exportTxButton";
             this.exportTxButton.Size = new System.Drawing.Size(87, 23);
             this.exportTxButton.TabIndex = 108;
             this.exportTxButton.Text = "エクスポート";
             this.exportTxButton.UseVisualStyleBackColor = true;
+            this.exportTxButton.Click += new System.EventHandler(this.exportTxButton_Click);
             // 
             // importTxButton
             // 
             this.importTxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.importTxButton.Enabled = false;
-            this.importTxButton.Location = new System.Drawing.Point(430, 240);
+            this.importTxButton.Location = new System.Drawing.Point(428, 240);
             this.importTxButton.Name = "importTxButton";
             this.importTxButton.Size = new System.Drawing.Size(87, 23);
             this.importTxButton.TabIndex = 107;
             this.importTxButton.Text = "インポート";
             this.importTxButton.UseVisualStyleBackColor = true;
+            this.importTxButton.Click += new System.EventHandler(this.importTxButton_Click);
             // 
             // clearTxQueueButton
             // 
             this.clearTxQueueButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearTxQueueButton.Location = new System.Drawing.Point(430, 265);
+            this.clearTxQueueButton.Location = new System.Drawing.Point(428, 265);
             this.clearTxQueueButton.Name = "clearTxQueueButton";
             this.clearTxQueueButton.Size = new System.Drawing.Size(182, 23);
             this.clearTxQueueButton.TabIndex = 109;
@@ -584,13 +588,13 @@
             0,
             0});
             this.timeOffsetNumBox.Name = "timeOffsetNumBox";
-            this.timeOffsetNumBox.Size = new System.Drawing.Size(305, 19);
+            this.timeOffsetNumBox.Size = new System.Drawing.Size(303, 19);
             this.timeOffsetNumBox.TabIndex = 104;
             // 
             // addTxDataButton
             // 
             this.addTxDataButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addTxDataButton.Location = new System.Drawing.Point(430, 188);
+            this.addTxDataButton.Location = new System.Drawing.Point(428, 188);
             this.addTxDataButton.Name = "addTxDataButton";
             this.addTxDataButton.Size = new System.Drawing.Size(182, 23);
             this.addTxDataButton.TabIndex = 105;
@@ -608,7 +612,7 @@
             this.groupBox3.Controls.Add(this.clearRxButton);
             this.groupBox3.Location = new System.Drawing.Point(3, 303);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(626, 218);
+            this.groupBox3.Size = new System.Drawing.Size(624, 218);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "受信したメッセージ";
@@ -619,7 +623,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clearRxButton.Location = new System.Drawing.Point(7, 189);
             this.clearRxButton.Name = "clearRxButton";
-            this.clearRxButton.Size = new System.Drawing.Size(281, 23);
+            this.clearRxButton.Size = new System.Drawing.Size(279, 23);
             this.clearRxButton.TabIndex = 112;
             this.clearRxButton.Text = "受信データクリア";
             this.clearRxButton.UseVisualStyleBackColor = true;
@@ -830,6 +834,20 @@
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 42;
             // 
+            // txQueueMenuStrip1
+            // 
+            this.txQueueMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txQueueDeleteMenuItem1});
+            this.txQueueMenuStrip1.Name = "txQueueMenuStrip1";
+            this.txQueueMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // txQueueDeleteMenuItem1
+            // 
+            this.txQueueDeleteMenuItem1.Name = "txQueueDeleteMenuItem1";
+            this.txQueueDeleteMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.txQueueDeleteMenuItem1.Text = "選択したデータを削除";
+            this.txQueueDeleteMenuItem1.Click += new System.EventHandler(this.txQueueDeleteMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -860,6 +878,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.txQueueMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -932,6 +951,8 @@
         private System.Windows.Forms.Button exportTxButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ContextMenuStrip txQueueMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem txQueueDeleteMenuItem1;
     }
 }
 

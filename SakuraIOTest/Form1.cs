@@ -1,7 +1,10 @@
 ﻿using SakuraIO;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
+using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.ListViewItem;
 
@@ -510,6 +513,26 @@ namespace SakuraIOTest
             return "";
         }
 
+        private string typeIndicatorToName(string indicator)
+        {
+            switch (indicator)
+            {
+                case "i":
+                    return "int32";
+                case "I":
+                    return "uint32";
+                case "l":
+                    return "int64";
+                case "L":
+                    return "uint64";
+                case "f":
+                    return "float";
+                case "d":
+                    return "double";
+            }
+            return "";
+        }
+
         private object convertValueType(string typename, object value)
         {
             switch (typename)
@@ -540,6 +563,94 @@ namespace SakuraIOTest
             System.Diagnostics.Process.Start("https://secure.sakura.ad.jp/iot/console/#/apikeys");
         }
 
+        private void exportTxButton_Click(object sender, EventArgs e)
+        {
+
+            var sf = new SaveFileDialog();
+            sf.Filter = "JSON file (*.json)|*.json";
+            sf.FilterIndex = 1;
+            if (sf.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            var channels = txQueueListView.Items.Cast<ListViewItem>()
+                .Select((x) =>
+                {
+                    return new Channel
+                    {
+                        ChannelID = int.Parse(x.SubItems[0].Text),
+                        Type = typeNameToIndicator(x.SubItems[1].Text),
+                        Value = convertValueType(x.SubItems[1].Text, x.SubItems[2].Text),
+                        Datetime = x.SubItems[3].Text
+                    };
+                })
+                .ToList();
+
+            using (var stream = sf.OpenFile())
+            {
+                if (stream == null)
+                {
+                    MessageBox.Show("file open error");
+                    return;
+                }
+                var serializer = new DataContractJsonSerializer(typeof(List<Channel>));
+                serializer.WriteObject(stream, channels);
+                stream.Close();
+            }
+            return;
+
+
+        }
+
+        private void importTxButton_Click(object sender, EventArgs e)
+        {
+
+            var of = new OpenFileDialog();
+            of.Filter = "JSON file (*.json)|*.json";
+            of.FilterIndex = 1;
+            if (of.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            List<Channel> channels;
+
+            using (var stream = of.OpenFile())
+            {
+                if (stream == null)
+                {
+                    MessageBox.Show("file open error");
+                    return;
+                }
+                var serializer = new DataContractJsonSerializer(typeof(List<Channel>));
+                channels = (List<Channel>)serializer.ReadObject(stream);
+                stream.Close();
+            }
+
+            var txData = channels.Select(x =>
+                new ListViewItem(new string[] {
+                    x.ChannelID.ToString(), typeIndicatorToName(x.Type), x.Value.ToString(), x.Datetime
+                })
+            ).ToArray();
+            txQueueListView.Items.AddRange(txData);
+            
+            return;
+
+        }
+
+        private void txQueueDeleteMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (txQueueListView.SelectedIndices.Count == 0)
+            {
+                return;
+            }
+
+            foreach(var item in txQueueListView.SelectedItems)
+            {
+                txQueueListView.Items.Remove((ListViewItem)item);
+            }
+        }
     }
 
 

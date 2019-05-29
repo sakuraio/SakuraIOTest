@@ -1,7 +1,10 @@
 ﻿using SakuraIO;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
+using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.ListViewItem;
 
@@ -540,6 +543,45 @@ namespace SakuraIOTest
             System.Diagnostics.Process.Start("https://secure.sakura.ad.jp/iot/console/#/apikeys");
         }
 
+        private void exportTxButton_Click(object sender, EventArgs e)
+        {
+
+            var sf = new SaveFileDialog();
+            sf.Filter = "JSON file (*.json)|*.json";
+            sf.FilterIndex = 1;
+            if (sf.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            var channels = txQueueListView.Items.Cast<ListViewItem>()
+                .Select((x) =>
+                {
+                    return new Channel
+                    {
+                        ChannelID = int.Parse(x.SubItems[0].Text),
+                        Type = typeNameToIndicator(x.SubItems[1].Text),
+                        Value = convertValueType(x.SubItems[1].Text, x.SubItems[2].Text),
+                        Datetime = x.SubItems[3].Text
+                    };
+                })
+                .ToList();
+
+            using (var stream = sf.OpenFile())
+            {
+                if (stream == null)
+                {
+                    MessageBox.Show("file open error");
+                    return;
+                }
+                var serializer = new DataContractJsonSerializer(typeof(List<Channel>));
+                serializer.WriteObject(stream, channels);
+                stream.Close();
+            }
+            return;
+
+
+        }
     }
 
 

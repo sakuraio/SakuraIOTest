@@ -203,7 +203,7 @@
             "byte[8]"});
             this.typeBox.Location = new System.Drawing.Point(118, 216);
             this.typeBox.Name = "typeBox";
-            this.typeBox.Size = new System.Drawing.Size(305, 20);
+            this.typeBox.Size = new System.Drawing.Size(304, 20);
             this.typeBox.TabIndex = 103;
             // 
             // channelNumBox
@@ -217,7 +217,7 @@
             0,
             0});
             this.channelNumBox.Name = "channelNumBox";
-            this.channelNumBox.Size = new System.Drawing.Size(305, 19);
+            this.channelNumBox.Size = new System.Drawing.Size(304, 19);
             this.channelNumBox.TabIndex = 102;
             // 
             // label2
@@ -248,7 +248,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.valueBox.Location = new System.Drawing.Point(118, 243);
             this.valueBox.Name = "valueBox";
-            this.valueBox.Size = new System.Drawing.Size(305, 19);
+            this.valueBox.Size = new System.Drawing.Size(304, 19);
             this.valueBox.TabIndex = 103;
             // 
             // label4
@@ -265,7 +265,7 @@
             // sendButton
             // 
             this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendButton.Location = new System.Drawing.Point(430, 214);
+            this.sendButton.Location = new System.Drawing.Point(429, 214);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(182, 23);
             this.sendButton.TabIndex = 106;
@@ -380,7 +380,7 @@
             this.tabControl1.Location = new System.Drawing.Point(7, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(609, 172);
+            this.tabControl1.Size = new System.Drawing.Size(608, 172);
             this.tabControl1.TabIndex = 110;
             // 
             // tabPage2
@@ -389,7 +389,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(601, 146);
+            this.tabPage2.Size = new System.Drawing.Size(600, 146);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CSV";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -451,7 +451,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(601, 146);
+            this.tabPage1.Size = new System.Drawing.Size(600, 146);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "JSON";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -460,7 +460,7 @@
             // 
             this.exportRxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exportRxButton.Enabled = false;
-            this.exportRxButton.Location = new System.Drawing.Point(294, 189);
+            this.exportRxButton.Location = new System.Drawing.Point(293, 189);
             this.exportRxButton.Name = "exportRxButton";
             this.exportRxButton.Size = new System.Drawing.Size(227, 23);
             this.exportRxButton.TabIndex = 113;
@@ -491,7 +491,7 @@
             this.txQueueListView.FullRowSelect = true;
             this.txQueueListView.Location = new System.Drawing.Point(7, 43);
             this.txQueueListView.Name = "txQueueListView";
-            this.txQueueListView.Size = new System.Drawing.Size(604, 139);
+            this.txQueueListView.Size = new System.Drawing.Size(603, 139);
             this.txQueueListView.TabIndex = 101;
             this.txQueueListView.UseCompatibleStateImageBehavior = false;
             this.txQueueListView.View = System.Windows.Forms.View.Details;
@@ -535,7 +535,7 @@
             this.groupBox2.Controls.Add(this.valueBox);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(626, 294);
+            this.groupBox2.Size = new System.Drawing.Size(625, 294);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "送信メッセージキュー";
@@ -543,19 +543,19 @@
             // exportTxButton
             // 
             this.exportTxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportTxButton.Enabled = false;
-            this.exportTxButton.Location = new System.Drawing.Point(525, 240);
+            this.exportTxButton.Location = new System.Drawing.Point(524, 240);
             this.exportTxButton.Name = "exportTxButton";
             this.exportTxButton.Size = new System.Drawing.Size(87, 23);
             this.exportTxButton.TabIndex = 108;
             this.exportTxButton.Text = "エクスポート";
             this.exportTxButton.UseVisualStyleBackColor = true;
+            this.exportTxButton.Click += new System.EventHandler(this.exportTxButton_Click);
             // 
             // importTxButton
             // 
             this.importTxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.importTxButton.Enabled = false;
-            this.importTxButton.Location = new System.Drawing.Point(430, 240);
+            this.importTxButton.Location = new System.Drawing.Point(429, 240);
             this.importTxButton.Name = "importTxButton";
             this.importTxButton.Size = new System.Drawing.Size(87, 23);
             this.importTxButton.TabIndex = 107;
@@ -565,7 +565,7 @@
             // clearTxQueueButton
             // 
             this.clearTxQueueButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearTxQueueButton.Location = new System.Drawing.Point(430, 265);
+            this.clearTxQueueButton.Location = new System.Drawing.Point(429, 265);
             this.clearTxQueueButton.Name = "clearTxQueueButton";
             this.clearTxQueueButton.Size = new System.Drawing.Size(182, 23);
             this.clearTxQueueButton.TabIndex = 109;
@@ -584,13 +584,13 @@
             0,
             0});
             this.timeOffsetNumBox.Name = "timeOffsetNumBox";
-            this.timeOffsetNumBox.Size = new System.Drawing.Size(305, 19);
+            this.timeOffsetNumBox.Size = new System.Drawing.Size(304, 19);
             this.timeOffsetNumBox.TabIndex = 104;
             // 
             // addTxDataButton
             // 
             this.addTxDataButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addTxDataButton.Location = new System.Drawing.Point(430, 188);
+            this.addTxDataButton.Location = new System.Drawing.Point(429, 188);
             this.addTxDataButton.Name = "addTxDataButton";
             this.addTxDataButton.Size = new System.Drawing.Size(182, 23);
             this.addTxDataButton.TabIndex = 105;
@@ -608,7 +608,7 @@
             this.groupBox3.Controls.Add(this.clearRxButton);
             this.groupBox3.Location = new System.Drawing.Point(3, 303);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(626, 218);
+            this.groupBox3.Size = new System.Drawing.Size(625, 218);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "受信したメッセージ";
@@ -619,7 +619,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clearRxButton.Location = new System.Drawing.Point(7, 189);
             this.clearRxButton.Name = "clearRxButton";
-            this.clearRxButton.Size = new System.Drawing.Size(281, 23);
+            this.clearRxButton.Size = new System.Drawing.Size(280, 23);
             this.clearRxButton.TabIndex = 112;
             this.clearRxButton.Text = "受信データクリア";
             this.clearRxButton.UseVisualStyleBackColor = true;
